@@ -9,7 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
  //タイマー
     var timer: Timer!
     //タイマー用の時間の変数
@@ -17,18 +16,27 @@ class ViewController: UIViewController {
 
     let imgArray = ["pic1","pic2","pic3"]
     var i:Int = 0
-    //引数から画像を読み込み関数
+    //引数から画像を読み込む用の関数
     func imgfunc(img: Int){
         let image = imgArray[img]
         imageView.image = UIImage(named: image)
     }
-    
+    //ラベル更新用関数
+    func xxxlabel(lbl: Bool,str: String){
+         nxtlbl.isEnabled = lbl
+         bcklbl.isEnabled = lbl
+         autolbl.setTitle(str, for: .normal)
+    }
+    //「再生/停止」押下後の処理
+//課題①　タップ後の初めの画面表示が4秒間になる
     @objc func updateTimer(_ timer:Timer){
-        self.imgfunc(img: i)
-        i += 1
         
-        if i == imgArray.count {
+        if i == (imgArray.count - 1) {
+             imgfunc(img: i)
              i = 0
+        }else{
+            imgfunc(img: i)
+            i += 1
         }
     }
     
@@ -37,42 +45,53 @@ class ViewController: UIViewController {
     @IBOutlet weak var bcklbl: UIButton!
     @IBOutlet weak var autolbl: UIButton!
     
+    //画像タップ時(遷移元→遷移先)
+    @IBAction func tapimg(_ sender: Any) {
+        performSegue(withIdentifier: "result", sender: nil)
+    }
+    //遷移先「戻る」→遷移元用
+    @IBAction func unwind(_ segue: UIStoryboardSegue) {
+    }
+    
+    //①遷移先のビューコントローラ取得
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let exViewCon:ExpansionViewController = segue.destination as! ExpansionViewController
+    //②遷移先へ送るデータをセット
+            exViewCon.eximage = imageView.image
+//疑問：何故E exViewCon.eximage = self.image
+        
+    }
+    
     //「進む」imgArrayの配列数の場合分け。最大値であれば「i=0」で初期化
     @IBAction func next(_ sender: Any) {
         if i < (imgArray.count - 1) {
             i += 1
-            imgfunc(img: i)
-        }else{
+         }else{
             i = 0
-            imgfunc(img: i)
         }
+        imgfunc(img: i)
     }
 
     //「戻る」imgArrayの配列数の場合分け。最小値であれば「i=imgArray.count-1」で初期化
     @IBAction func back(_ sender: Any) {
         if i != 0{
             i -= 1
-            imgfunc(img: i)
         }else{
             i = (imgArray.count - 1)
-            imgfunc(img: i)
         }
+        imgfunc(img: i)
     }
 
     //「再生/停止」の処理
     @IBAction func start_stop(_ sender: Any) {
         if self.timer == nil{
-        //「進む」「戻る」無効化
-            nxtlbl.isEnabled = false
-            bcklbl.isEnabled = false
-            autolbl.setTitle("停止", for: .normal)
+        //「進む」「戻る」無効化。（xxxlbl関数呼出し）
+            xxxlabel(lbl: false, str: "停止")
         self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(updateTimer(_:)), userInfo: nil, repeats: true)
             
         }else{
-        //「進む」「戻る」有効化
-            nxtlbl.isEnabled = true
-            bcklbl.isEnabled = true
-            autolbl.setTitle("再生", for: .normal)
+        //「進む」「戻る」有効化。（xxxlbl関数呼出し）
+            xxxlabel(lbl: true, str: "再生")
             self.timer.invalidate()
             self.timer = nil
         }
@@ -80,11 +99,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-      //  imageView.image = UIImage(named: "pic1")
-    //    imageView.image = [UIImage imagedNamed: @"pictuer1.jpeg"]
+        xxxlabel(lbl: true, str: "再生")
 
     }
-
-
 }
 

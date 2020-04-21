@@ -16,6 +16,7 @@
 		62DAACD0244D76F90055C928 /* picture2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 62DAACCF244D76F90055C928 /* picture2.jpeg */; };
 		62DAACD5244D78B20055C928 /* picture1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 62DAACD3244D779D0055C928 /* picture1.jpeg */; };
 		62DAACD7244D7AA20055C928 /* picture3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 62DAACD6244D7AA20055C928 /* picture3.jpeg */; };
+		62DAACD9244E94200055C928 /* ExpansionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DAACD8244E94200055C928 /* ExpansionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		62DAACCF244D76F90055C928 /* picture2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = picture2.jpeg; sourceTree = "<group>"; };
 		62DAACD3244D779D0055C928 /* picture1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = picture1.jpeg; path = "../../../Pictures/写真 Library.photoslibrary/resources/derivatives/F/picture1.jpeg"; sourceTree = "<group>"; };
 		62DAACD6244D7AA20055C928 /* picture3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = picture3.jpeg; sourceTree = "<group>"; };
+		62DAACD8244E94200055C928 /* ExpansionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpansionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				62DAACB9244D4CDF0055C928 /* AppDelegate.swift */,
 				62DAACBB244D4CDF0055C928 /* SceneDelegate.swift */,
 				62DAACBD244D4CDF0055C928 /* ViewController.swift */,
+				62DAACD8244E94200055C928 /* ExpansionViewController.swift */,
 				62DAACD3244D779D0055C928 /* picture1.jpeg */,
 				62DAACCF244D76F90055C928 /* picture2.jpeg */,
 				62DAACD6244D7AA20055C928 /* picture3.jpeg */,
@@ -150,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62DAACD9244E94200055C928 /* ExpansionViewController.swift in Sources */,
 				62DAACBE244D4CDF0055C928 /* ViewController.swift in Sources */,
 				62DAACBA244D4CDF0055C928 /* AppDelegate.swift in Sources */,
 				62DAACBC244D4CDF0055C928 /* SceneDelegate.swift in Sources */,

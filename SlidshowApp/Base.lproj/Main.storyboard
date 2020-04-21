@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,23 +12,29 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SlidshowApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dG4-oi-5ct">
-                                <rect key="frame" x="88" y="672" width="238" height="40"/>
+                                <rect key="frame" x="68.666666666666686" y="588" width="238" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1CG-6Y-ebf">
                                         <rect key="frame" x="0.0" y="0.0" width="66" height="40"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="66" id="bI2-ON-noH"/>
+                                        </constraints>
                                         <state key="normal" title="進 む"/>
                                         <connections>
                                             <action selector="next:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wMH-6q-wEA"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6n-ZX-iK9">
-                                        <rect key="frame" x="86" y="0.0" width="66" height="40"/>
+                                        <rect key="frame" x="85.999999999999986" y="0.0" width="66.000000000000014" height="40"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="66" id="GT6-xM-R2E"/>
+                                        </constraints>
                                         <state key="normal" title="戻 る"/>
                                         <connections>
                                             <action selector="back:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aqf-rF-LJN"/>
@@ -37,6 +43,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nV5-uD-FBe">
                                         <rect key="frame" x="172" y="0.0" width="66" height="40"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="66" id="jha-rd-Gca"/>
+                                        </constraints>
                                         <state key="normal" title="再生/停止"/>
                                         <connections>
                                             <action selector="start_stop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="my5-zU-RxB"/>
@@ -47,9 +56,13 @@
                                     <constraint firstAttribute="height" constant="40" id="4Ol-jY-APh"/>
                                 </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pic1" translatesAutoresizingMaskIntoConstraints="NO" id="bMF-SG-Ead">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="589"/>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pic1" translatesAutoresizingMaskIntoConstraints="NO" id="bMF-SG-Ead">
+                                <rect key="frame" x="0.0" y="143" width="414" height="414"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Ehw-gp-sFq" appends="YES" id="FKA-gp-Ty9"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -59,31 +72,57 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="2Sz-5W-ijS"/>
                     <connections>
                         <outlet property="autolbl" destination="nV5-uD-FBe" id="Y8I-DH-9Wh"/>
                         <outlet property="bcklbl" destination="U6n-ZX-iK9" id="X3X-SJ-wHa"/>
                         <outlet property="imageView" destination="bMF-SG-Ead" id="ls9-yF-wN3"/>
                         <outlet property="nxtlbl" destination="1CG-6Y-ebf" id="izA-fd-2fa"/>
+                        <segue destination="hSg-6h-XXH" kind="show" identifier="result" id="rJO-cw-FPr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Ehw-gp-sFq">
+                    <connections>
+                        <action selector="tapimg:" destination="BYZ-38-t0r" id="yJo-g4-yod"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="101.78571428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Expansion View Controller-->
         <scene sceneID="oNX-pk-Xtu">
             <objects>
-                <viewController id="hSg-6h-XXH" sceneMemberID="viewController">
+                <viewController id="hSg-6h-XXH" customClass="ExpansionViewController" customModule="SlidshowApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gra-Lt-dwM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="34X-9o-I8e">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="493"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08O-co-Iy8">
+                                <rect key="frame" x="192" y="743" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <segue destination="5h9-so-enw" kind="unwind" unwindAction="unwind:" id="kSi-YV-ECK"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="EUP-RO-PCR"/>
                     </view>
+                    <navigationItem key="navigationItem" id="cSL-ri-eQQ"/>
+                    <connections>
+                        <outlet property="expVC" destination="34X-9o-I8e" id="uXf-xq-QWt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOA-R8-pjS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="5h9-so-enw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="872" y="102"/>
+            <point key="canvasLocation" x="871.01449275362324" y="101.78571428571428"/>
         </scene>
     </scenes>
     <resources>
