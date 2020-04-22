@@ -45,7 +45,14 @@ class ViewController: UIViewController {
     
     //画像タップ時(遷移元→遷移先)
     @IBAction func tapimg(_ sender: Any) {
+        //SSが起動中の場合の画面推移時にSSの停止処理
+        if self.timer != nil{
+            xxxlabel(lbl: true, str: "再生")
+            self.timer.invalidate()
+            self.timer = nil
+        }
         performSegue(withIdentifier: "result", sender: nil)
+        
     }
     //storyboardを利用した画面segue(メソッド名は自由) (遷移先「戻る」→遷移元)
     @IBAction func unwind(_ segue: UIStoryboardSegue) {
