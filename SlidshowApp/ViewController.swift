@@ -28,15 +28,13 @@ class ViewController: UIViewController {
          autolbl.setTitle(str, for: .normal)
     }
     //「再生/停止」押下後の処理
-//課題①　タップ後の初めの画面表示が4秒間になる
     @objc func updateTimer(_ timer:Timer){
-        
-        if i == (imgArray.count - 1) {
-             imgfunc(img: i)
-             i = 0
+            i += 1
+        if i >= imgArray.count {
+            i = 0
+            imgfunc(img: i)
         }else{
             imgfunc(img: i)
-            i += 1
         }
     }
     
@@ -49,7 +47,7 @@ class ViewController: UIViewController {
     @IBAction func tapimg(_ sender: Any) {
         performSegue(withIdentifier: "result", sender: nil)
     }
-    //遷移先「戻る」→遷移元用
+    //storyboardを利用した画面segue(メソッド名は自由) (遷移先「戻る」→遷移元)
     @IBAction func unwind(_ segue: UIStoryboardSegue) {
     }
     
@@ -85,12 +83,12 @@ class ViewController: UIViewController {
     //「再生/停止」の処理
     @IBAction func start_stop(_ sender: Any) {
         if self.timer == nil{
-        //「進む」「戻る」無効化。（xxxlbl関数呼出し）
+        //「進む」「戻る」無効化とラベル変更。（xxxlbl関数呼出し）
             xxxlabel(lbl: false, str: "停止")
         self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(updateTimer(_:)), userInfo: nil, repeats: true)
             
         }else{
-        //「進む」「戻る」有効化。（xxxlbl関数呼出し）
+        //「進む」「戻る」有効化とラベル変更。（xxxlbl関数呼出し）
             xxxlabel(lbl: true, str: "再生")
             self.timer.invalidate()
             self.timer = nil

@@ -16,10 +16,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dG4-oi-5ct">
-                                <rect key="frame" x="68.666666666666686" y="588" width="238" height="40"/>
+                                <rect key="frame" x="68.666666666666686" y="723" width="238" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1CG-6Y-ebf">
-                                        <rect key="frame" x="0.0" y="0.0" width="66" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="66" height="30"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="66" id="bI2-ON-noH"/>
@@ -30,7 +30,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6n-ZX-iK9">
-                                        <rect key="frame" x="85.999999999999986" y="0.0" width="66.000000000000014" height="40"/>
+                                        <rect key="frame" x="85.999999999999986" y="0.0" width="66.000000000000014" height="30"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="66" id="GT6-xM-R2E"/>
@@ -41,7 +41,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nV5-uD-FBe">
-                                        <rect key="frame" x="172" y="0.0" width="66" height="40"/>
+                                        <rect key="frame" x="172" y="0.0" width="66" height="30"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="66" id="jha-rd-Gca"/>
@@ -52,14 +52,13 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="4Ol-jY-APh"/>
-                                </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pic1" translatesAutoresizingMaskIntoConstraints="NO" id="bMF-SG-Ead">
-                                <rect key="frame" x="0.0" y="143" width="414" height="414"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic1" translatesAutoresizingMaskIntoConstraints="NO" id="bMF-SG-Ead">
+                                <rect key="frame" x="10" y="94" width="355" height="250"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="VG9-BY-H4r"/>
+                                </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="Ehw-gp-sFq" appends="YES" id="FKA-gp-Ty9"/>
                                 </connections>
@@ -67,8 +66,13 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dG4-oi-5ct" secondAttribute="bottom" constant="150" id="g8g-q7-8A0"/>
-                            <constraint firstItem="dG4-oi-5ct" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jm7-99-Dbu"/>
+                            <constraint firstItem="bMF-SG-Ead" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="351-Li-MaM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dG4-oi-5ct" secondAttribute="bottom" constant="25" id="AAa-bf-f89"/>
+                            <constraint firstItem="bMF-SG-Ead" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="CCv-Wj-9tn"/>
+                            <constraint firstItem="dG4-oi-5ct" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EDI-xR-h2z"/>
+                            <constraint firstItem="bMF-SG-Ead" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="c4e-Al-uoG"/>
+                            <constraint firstItem="bMF-SG-Ead" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dVe-PV-3ko"/>
+                            <constraint firstAttribute="trailing" secondItem="bMF-SG-Ead" secondAttribute="trailing" constant="10" id="ruc-or-wWs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -98,13 +102,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="34X-9o-I8e">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="493"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="34X-9o-I8e">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="619"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08O-co-Iy8">
-                                <rect key="frame" x="192" y="743" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08O-co-Iy8">
+                                <rect key="frame" x="154.66666666666666" y="669" width="66" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="nSY-vU-miB"/>
+                                    <constraint firstAttribute="width" constant="66" id="tUp-Ts-2nU"/>
+                                </constraints>
                                 <state key="normal" title="戻る"/>
                                 <connections>
                                     <segue destination="5h9-so-enw" kind="unwind" unwindAction="unwind:" id="kSi-YV-ECK"/>
@@ -112,6 +118,15 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="34X-9o-I8e" firstAttribute="leading" secondItem="EUP-RO-PCR" secondAttribute="leading" id="Mx2-Ja-2Qf"/>
+                            <constraint firstItem="34X-9o-I8e" firstAttribute="centerX" secondItem="gra-Lt-dwM" secondAttribute="centerX" id="Tai-KV-cNA"/>
+                            <constraint firstItem="08O-co-Iy8" firstAttribute="centerX" secondItem="gra-Lt-dwM" secondAttribute="centerX" id="fDB-f2-R26"/>
+                            <constraint firstItem="34X-9o-I8e" firstAttribute="top" secondItem="EUP-RO-PCR" secondAttribute="top" id="fbr-6P-KAK"/>
+                            <constraint firstItem="34X-9o-I8e" firstAttribute="trailing" secondItem="EUP-RO-PCR" secondAttribute="trailing" id="rYO-1D-Jjd"/>
+                            <constraint firstItem="EUP-RO-PCR" firstAttribute="bottom" secondItem="08O-co-Iy8" secondAttribute="bottom" constant="25" id="y2v-1g-WU9"/>
+                            <constraint firstItem="08O-co-Iy8" firstAttribute="top" secondItem="34X-9o-I8e" secondAttribute="bottom" constant="50" id="zvT-eU-C3D"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="EUP-RO-PCR"/>
                     </view>
                     <navigationItem key="navigationItem" id="cSL-ri-eQQ"/>

@@ -11,16 +11,15 @@ import UIKit
 class ExpansionViewController: UIViewController {
     @IBOutlet weak var expVC: UIImageView!
       
+    //遷移元からの受取り用データ格納先の指定
       var eximage: UIImage!
-    //var expView : UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-        //expView.image = self.image
+     
+        //受取り用データからイメージ画像の挿入
         expVC.image = self.eximage
-        
     }
 
     /*
